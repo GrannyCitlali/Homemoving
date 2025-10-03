@@ -1,3 +1,4 @@
+/* style.css */
 body {
     font-family: "Microsoft YaHei", sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     text-align: center;
     background: #fff9f0;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* 封面全屏背景 */
@@ -30,21 +32,29 @@ body {
 
 .content {
     padding: 30px 20px;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* 地图模块 */
 .map-section {
-    padding: 20px;
+    padding: 40px 20px;
     background: #fff5f0;
     text-align: center;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .map-section h2 {
     color: #d9775b;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 .map-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
@@ -53,8 +63,12 @@ body {
 
 .footer {
     background: #fff0e5;
-    padding: 20px;
+    padding: 40px 20px;
     font-size: 14px;
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #music-btn {
@@ -68,4 +82,47 @@ body {
     padding: 10px 15px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* 动画效果 */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s ease-out forwards;
+}
+
+.slide-up:nth-child(1) { animation-delay: 0.3s; }
+.slide-up:nth-child(2) { animation-delay: 0.6s; }
+.slide-up:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .map-container {
+        height: 400px;
+    }
+    .hero h1 { font-size: 1.8rem; }
+    .content, .map-section, .footer {
+        padding: 30px 15px;
+    }
 }
