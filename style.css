@@ -7,6 +7,7 @@ body {
     background: #fff9f0;
     color: #333;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* 封面全屏背景 */
@@ -23,24 +24,76 @@ body {
     background: rgba(0,0,0,0.3);
     color: white;
     text-align: center;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
 }
 
-.hero h1 { font-size: 2rem; margin-bottom: 10px; }
-.hero p { font-size: 1rem; }
+.hero h1 { 
+    font-size: 2.2rem; 
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.hero p { 
+    font-size: 1.2rem; 
+    margin: 0;
+}
 
 .content {
-    padding: 30px 20px;
+    padding: 50px 20px;
     min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.invitation-text {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.invitation-text p {
+    margin-bottom: 20px;
+    text-indent: 2em;
+}
+
+.invitation-text h2 {
+    text-align: center;
+    text-indent: 0;
+    color: #d9775b;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background: #fff5e6;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #d9775b;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.info-card p {
+    text-indent: 0;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.closing {
+    text-align: center;
+    text-indent: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9775b;
+    margin-top: 30px;
 }
 
 /* 地图模块 */
 .map-section {
-    padding: 40px 20px;
+    padding: 50px 20px;
     background: #fff5f0;
     text-align: center;
     min-height: 60vh;
@@ -50,21 +103,22 @@ body {
 }
 .map-section h2 {
     color: #d9775b;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
 }
 .map-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .footer {
     background: #fff0e5;
-    padding: 40px 20px;
-    font-size: 14px;
+    padding: 50px 20px;
+    font-size: 16px;
     min-height: 20vh;
     display: flex;
     align-items: center;
@@ -79,10 +133,17 @@ body {
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 10px 15px;
+    padding: 12px 18px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     z-index: 1000;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#music-btn:hover {
+    background: #ff8855;
+    transform: translateY(-2px);
 }
 
 /* 动画效果 */
@@ -121,8 +182,39 @@ body {
     .map-container {
         height: 400px;
     }
-    .hero h1 { font-size: 1.8rem; }
+    .hero h1 { 
+        font-size: 1.6rem; 
+        margin-bottom: 10px;
+    }
+    .hero p { 
+        font-size: 1rem; 
+    }
+    .hero-overlay {
+        padding: 20px;
+        margin: 20px;
+    }
     .content, .map-section, .footer {
         padding: 30px 15px;
+    }
+    .invitation-text {
+        font-size: 15px;
+    }
+    .info-card {
+        padding: 20px 15px;
+    }
+    .info-card p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { 
+        font-size: 1.4rem; 
+    }
+    .content {
+        padding: 30px 10px;
+    }
+    .invitation-text p {
+        text-indent: 1em;
     }
 }
